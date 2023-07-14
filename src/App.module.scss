@@ -1,0 +1,29 @@
+.rootContainer {
+    display: flex;
+    justify-content: center;
+}
+.counts {
+    position: absolute;
+    right: 20px;
+	bottom: 20px;
+    font-size: 30px;
+}
+.buttonsContainer {
+    display: flex; 
+    justify-content: center;
+    gap: 10px;
+}
+.gameControlButton {
+    width: 150px;
+    height: 40px;
+}
+
+.timerContainer {
+    position: absolute;
+    left: 20px;
+	bottom: 20px;
+}
+.emptyFieldMessage {
+   font-size: 35px;
+   margin-top: 350px;
+}
