@@ -22,4 +22,13 @@ const shuffleArray = <T>(arr: T[]) => {
   }
 
   return arrCopy;
-}
+};
+
+export const getTimeToViewFromSeconds = (time: number) => {
+  const [minutes, seconds] = [Math.floor(time / 60), time % 60];
+
+  const transformToTwoSymbols = (number: number) =>
+    `${number}`.length < 2 ? `0${number}` : `${number}`;
+
+  return `${transformToTwoSymbols(minutes)}:${transformToTwoSymbols(seconds)}`;
+};

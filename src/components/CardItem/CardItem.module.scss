@@ -1,40 +1,158 @@
+$offsetSpades: -1px;
+$offsetHearts: -140px;
+$offsetClubs: -278px;
+$offsetDiamonds: -417px;
+$offsetA: -1.5px;
+$offset6: -491px;
+$offset7: -589px;
+$offset8: -687px;
+$offset9: -785px;
+$offset10: -883px;
+$offsetJ: -981px;
+$offsetQ: -1079px;
+$offsetK: -1177px;
+
 .card {
-    background-color: transparent;
-    padding: 5px;
-    width: 80px;
-    height: 120px;
-    perspective: 1000px;
-    border: 1px solid rgb(22, 19, 19);
-    border-radius: 3px;
-    font-size: 20px;
-    box-shadow: -1px 1px 1px 1px rgb(22, 19, 19);
-    position: relative;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    transform-origin: center right;
-    transition: transform 1s;
+  height: 130px;
+  width: 90px;
+  perspective: 1000px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
 }
 .is-flipped {
-    transform: translateX(-100%) rotateY(-180deg);
-    }
-    
-    .card__face {
-    position: absolute;
-    width: 80px;
-    height: 120px;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 40px;
-    backface-visibility: hidden;
-    }
-    
-    .card__face--front {
-    background: crimson;
-    }
-    
-    .card__face--back {
-    background-color: rgb(33, 33, 23);
-    transform: rotateY(180deg);
-    }
- 
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  border: 2px solid rgb(7, 6, 6);
+  background: url("./assets/cards.jpg") no-repeat;
+  background-size: 1515% 422%;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+
+.mapShirt {
+  background-position: -1274px -417px;
+}
+
+.spades_A {
+  background-position: $offsetA $offsetSpades;
+}
+.spades_6 {
+  background-position: $offset6 $offsetSpades;
+}
+.spades_7 {
+  background-position: $offset7 $offsetSpades;
+}
+.spades_8 {
+  background-position: $offset8 $offsetSpades;
+}
+.spades_9 {
+  background-position: $offset9 $offsetSpades;
+}
+.spades_10 {
+  background-position: $offset10 $offsetSpades;
+}
+.spades_J {
+  background-position: $offsetJ $offsetSpades;
+}
+.spades_Q {
+  background-position: $offsetQ $offsetSpades;
+}
+.spades_K {
+  background-position: $offsetK $offsetSpades;
+}
+
+.hearts_A {
+  background-position: $offsetA $offsetHearts;
+}
+.hearts_6 {
+  background-position: $offset6 $offsetHearts;
+}
+.hearts_7 {
+  background-position: $offset7 $offsetHearts;
+}
+.hearts_8 {
+  background-position: $offset8 $offsetHearts;
+}
+.hearts_9 {
+  background-position: $offset9 $offsetHearts;
+}
+.hearts_10 {
+  background-position: $offset10 $offsetHearts;
+}
+.hearts_J {
+  background-position: $offsetJ $offsetHearts;
+}
+.hearts_Q {
+  background-position: $offsetQ $offsetHearts;
+}
+.hearts_K {
+  background-position: $offsetK $offsetHearts;
+}
+
+.clubs_A {
+  background-position: $offsetA $offsetClubs;
+}
+.clubs_6 {
+  background-position: $offset6 $offsetClubs;
+}
+.clubs_7 {
+  background-position: $offset7 $offsetClubs;
+}
+.clubs_8 {
+  background-position: $offset8 $offsetClubs;
+}
+.clubs_9 {
+  background-position: $offset9 $offsetClubs;
+}
+.clubs_10 {
+  background-position: $offset10 $offsetClubs;
+}
+.clubs_J {
+  background-position: $offsetJ $offsetClubs;
+}
+.clubs_Q {
+  background-position: $offsetQ $offsetClubs;
+}
+.clubs_K {
+  background-position: $offsetK $offsetClubs;
+}
+
+.diamonds_A {
+  background-position: $offsetA $offsetDiamonds;
+}
+.diamonds_6 {
+  background-position: $offset6 $offsetDiamonds;
+}
+.diamonds_7 {
+  background-position: $offset7 $offsetDiamonds;
+}
+.diamonds_8 {
+  background-position: $offset8 $offsetDiamonds;
+}
+.diamonds_9 {
+  background-position: $offset9 $offsetDiamonds;
+}
+.diamonds_10 {
+  background-position: $offset10 $offsetDiamonds;
+}
+.diamonds_J {
+  background-position: $offsetJ $offsetDiamonds;
+}
+.diamonds_Q {
+  background-position: $offsetQ $offsetDiamonds;
+}
+.diamonds_K {
+  background-position: $offsetK $offsetDiamonds;
+}

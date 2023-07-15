@@ -4,28 +4,20 @@ import {
   useState,
   useImperativeHandle,
   useMemo,
+  ForwardedRef,
 } from "react";
 import styles from "./Timer.module.scss";
+import { getTimeToViewFromSeconds } from "../../utils";
 
 export interface TimerMethods {
   startTimer(): void;
   resetTimer(): void;
   stopTimer(): void;
+  currentTime: number;
 }
 
 export const Timer = forwardRef((_, ref) => {
   const [time, setTime] = useState<number>(0);
-
-  const timeToView = useMemo(() => {
-    const [minutes, seconds] = [Math.floor(time / 60), time % 60];
-
-    const transformToTwoSymbols = (number: number) =>
-      `${number}`.length < 2 ? `0${number}` : `${number}`;
-
-    return `${transformToTwoSymbols(minutes)}:${transformToTwoSymbols(
-      seconds
-    )}`;
-  }, [time]);
 
   const intervalRef = useRef<NodeJS.Timer | null>(null);
 
@@ -51,13 +43,14 @@ export const Timer = forwardRef((_, ref) => {
     }, 1000);
   };
 
-  useImperativeHandle(ref, () => {
+  useImperativeHandle<unknown, TimerMethods>(ref, () => {
     return {
       resetTimer,
       startTimer,
       stopTimer,
+      currentTime: time,
     };
   });
 
-  return <div className={styles.timer}>{timeToView}</div>;
+  return <div className={styles.timer}>{getTimeToViewFromSeconds(time)}</div>;
 });

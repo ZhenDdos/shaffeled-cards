@@ -1,29 +1,28 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { Card } from "../../types";
 import { CardItem } from "../CardItem";
 import styles from "./CardField.module.scss";
 
 interface CardFieldProps {
   cards: Card[];
-  onEndGame(): void;
+  onCompleteGame(): void;
   onIncreaseTryCounts(): void;
 }
 
 export const CardField = ({
   cards,
-  onEndGame,
+  onCompleteGame,
   onIncreaseTryCounts,
 }: CardFieldProps) => {
   const [openedCards, setOpenCards] = useState<Card[]>([]);
   const [currentOpenedCards, setCurrentOpenedCards] = useState<
     (Card & { cardIndex: number })[]
   >([]);
-  const updateCardsTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const updateCardsTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleTwoOpenedCards = useCallback(() => {
     if (
-      currentOpenedCards[0].denomination ===
-        currentOpenedCards[1].denomination &&
+      currentOpenedCards[0].rank === currentOpenedCards[1].rank &&
       currentOpenedCards[0].suit === currentOpenedCards[1].suit
     ) {
       setOpenCards((openedCards) => [...openedCards, ...currentOpenedCards]);
@@ -34,6 +33,8 @@ export const CardField = ({
 
   const handleCardClick = useCallback(
     (cardIndex: number) => (card: Card) => {
+      if (!!currentOpenedCards.find((card) => card.cardIndex === cardIndex))
+        return;
       switch (currentOpenedCards.length) {
         case 0:
           setCurrentOpenedCards([
@@ -72,9 +73,9 @@ export const CardField = ({
 
   useEffect(() => {
     if (openedCards.length === cards.length) {
-      onEndGame();
+      onCompleteGame();
     }
-  }, [openedCards.length])
+  }, [openedCards.length]);
 
   return (
     <div className={styles.container}>
@@ -83,8 +84,7 @@ export const CardField = ({
           ({ cardIndex }) => cardIndex === idx
         );
         const isCardInvisible = !!openedCards.find(
-          ({ denomination, suit }) =>
-            denomination === card.denomination && suit === card.suit
+          ({ rank, suit }) => rank === card.rank && suit === card.suit
         );
 
         return (

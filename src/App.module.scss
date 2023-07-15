@@ -1,29 +1,24 @@
-.rootContainer {
-    display: flex;
-    justify-content: center;
+.app {
+  min-height: 100vh;
 }
-.counts {
-    position: absolute;
-    right: 20px;
-	bottom: 20px;
-    font-size: 30px;
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
 }
-.buttonsContainer {
-    display: flex; 
-    justify-content: center;
-    gap: 10px;
+.counts,
+.timerContainer {
+  font-size: 30px;
+  width: 200px;
 }
 .gameControlButton {
-    width: 150px;
-    height: 40px;
+  width: 150px;
+  height: 40px;
 }
-
-.timerContainer {
-    position: absolute;
-    left: 20px;
-	bottom: 20px;
+.content {
+  display: flex;
+  justify-content: center;
 }
-.emptyFieldMessage {
-   font-size: 35px;
-   margin-top: 350px;
+.emptyFieldPlaceholder {
+  font-size: 30px;
 }

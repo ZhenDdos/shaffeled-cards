@@ -1,11 +1,11 @@
 .container {
-    margin-top: 35px;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  margin-top: 35px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
