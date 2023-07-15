@@ -46,7 +46,7 @@ const App = () => {
 
   const handleEndGameModalOpen = () => {
     stopTimer();
-    setIsEndGameModalOpen(true);
+    if(!!cards.length) setIsEndGameModalOpen(true);
   };
 
   const handleEndGameModalCancelClose = () => {

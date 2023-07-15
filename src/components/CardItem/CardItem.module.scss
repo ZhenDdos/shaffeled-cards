@@ -8,11 +8,33 @@
     border-radius: 3px;
     font-size: 20px;
     box-shadow: -1px 1px 1px 1px rgb(22, 19, 19);
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
 }
-.backSide {
-    background-color: rgb(22, 19, 19);
-    height: 100%;
-    width: 100%;
-}
-
+.is-flipped {
+    transform: translateX(-100%) rotateY(-180deg);
+    }
+    
+    .card__face {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+    }
+    
+    .card__face--front {
+    background: crimson;
+    }
+    
+    .card__face--back {
+    background-color: rgb(33, 33, 23);
+    transform: rotateY(180deg);
+    }
  

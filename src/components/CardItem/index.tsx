@@ -11,15 +11,21 @@ interface CardProps {
 export const CardItem = ({ card, isOpen, onClick }: CardProps) => {
   const { denomination, suit } = card;
   return (
-    <div onClick={() => onClick(card)} className={styles.card}>
-      {isOpen ? (
-        <div>
+    <div className={styles.scene}>
+      <div
+        className={`${styles.card} ${!isOpen ? styles["is-flipped"] : ""}`}
+        onClick={(e) => onClick(card)}
+      >
+        <div
+          className={`${styles["card__face"]} ${styles["card__face--front"]}`}
+        >
           {denomination}
           {suitsSymbols[suit]}
         </div>
-      ) : (
-        <div className={styles.backSide}></div>
-      )}
+        <div
+          className={`${styles["card__face"]} ${styles["card__face--back"]}`}
+        ></div>
+      </div>
     </div>
   );
 };
