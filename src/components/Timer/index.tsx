@@ -5,6 +5,7 @@ import {
   useImperativeHandle,
   useMemo,
   ForwardedRef,
+  useEffect,
 } from "react";
 import styles from "./Timer.module.scss";
 import { getTimeToViewFromSeconds } from "../../utils";
@@ -42,6 +43,12 @@ export const Timer = forwardRef((_, ref) => {
       setTime((time) => time + 1);
     }, 1000);
   };
+
+  useEffect(() => {
+    return () => {
+      clearIntervalIfExist();
+    };
+  }, []);
 
   useImperativeHandle<unknown, TimerMethods>(ref, () => {
     return {

@@ -21,14 +21,6 @@ const App = () => {
     setTryCounts((tryCounts) => tryCounts + 1);
   };
 
-  const stopTimer = useCallback(() => {
-    timerRef.current?.stopTimer();
-  }, []);
-
-  const resetTimer = useCallback(() => {
-    timerRef.current?.resetTimer();
-  }, []);
-
   const onStartGameClick = () => {
     setCards(generateCardField());
     timerRef.current?.startTimer();
@@ -36,7 +28,7 @@ const App = () => {
 
   const endGame = () => {
     setCards([]);
-    resetTimer();
+    timerRef.current?.resetTimer();
     setTryCounts(0);
   };
 
@@ -45,7 +37,7 @@ const App = () => {
   };
 
   const onEndGameClick = () => {
-    stopTimer();
+    timerRef.current?.stopTimer();
     setIsEndGameModalOpen(true);
   };
 
@@ -61,7 +53,7 @@ const App = () => {
 
   const onCompleteGame = () => {
     setIsCompleteGameModalOpen(true);
-    stopTimer();
+    timerRef.current?.stopTimer();
   };
 
   const handleCloseCompleteModal = () => {

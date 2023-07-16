@@ -1,4 +1,3 @@
-import { suitsSymbols } from "../../constans";
 import { Card } from "../../types";
 import styles from "./CardItem.module.scss";
 
@@ -13,7 +12,7 @@ export const CardItem = ({ card, isOpen, onClick }: CardProps) => {
   return (
     <div
       className={`${styles.card} ${!isOpen ? styles["is-flipped"] : ""}`}
-      onClick={(e) => onClick(card)}
+      onClick={() => onClick(card)}
     >
       <div
         className={`${styles["card__face"]} ${styles["card__face--front"]} ${
