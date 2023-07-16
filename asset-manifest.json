@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shaffeled-cards/static/css/main.b8dcb042.css",
-    "main.js": "/shaffeled-cards/static/js/main.a60c106e.js",
+    "main.js": "/shaffeled-cards/static/js/main.1f2723bc.js",
     "static/media/cards.jpg": "/shaffeled-cards/static/media/cards.c40ce9309b023cb517b4.jpg",
     "index.html": "/shaffeled-cards/index.html",
     "main.b8dcb042.css.map": "/shaffeled-cards/static/css/main.b8dcb042.css.map",
-    "main.a60c106e.js.map": "/shaffeled-cards/static/js/main.a60c106e.js.map"
+    "main.1f2723bc.js.map": "/shaffeled-cards/static/js/main.1f2723bc.js.map"
   },
   "entrypoints": [
     "static/css/main.b8dcb042.css",
-    "static/js/main.a60c106e.js"
+    "static/js/main.1f2723bc.js"
   ]
 }
